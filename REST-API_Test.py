@@ -7,9 +7,10 @@ import json
 invalid_user_id=123
 user_id=3360
 update_success_code_list=[200,204]
+delete_success_code_list=[200,202,204]
 UsersURL="https://gorest.co.in/public-api/users"
-new_user= {'name':'Mono1235','email':'Mono125@hacett.com','gender':'male','status':'active'}
-element= {'name':'Ghorbel123','email':'Ghorbel123@hacett.fr','gender':'male','status':'unactive'}
+new_user= {'name':'Mono1235','email':'Hello2@hacett.com','gender':'female','status':'active'}
+element= {'name':'Ghorbel123','email':'Hello1@hacett.fr','gender':'female','status':'unactive'}
 my_headers = {'Authorization' : 'Bearer fa5ba154859da3b436a7a416571fc579ca8413aa828afa6b14522098fa810af4'}
 
 logging.basicConfig(filename='Syslog.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
@@ -40,6 +41,14 @@ def AddElement(URL,Element,Auth):
      print(post_response.content)
      return post_response
 
+def DeleteElement(URL,ID,Auth):
+     """ Delete Element """
+     url=str(URL)+"/"+str(ID)
+     delete_response = requests.delete(url, headers=Auth)
+     print(delete_response)
+     print(delete_response.json())
+     print(delete_response.content)
+     return delete_response
 
 def UpdateElement(URL,ID,Element,Auth):
      """ Update Element """
@@ -86,5 +95,9 @@ def test_put_user():
      Json = res.json()
      assert Json["code"] in update_success_code_list
 
+def test_delete_user():
+     res=DeleteElement(UsersURL,user_id,my_headers)
+     Json = res.json()
+     assert Json["code"] in delete_success_code_list
 
 
