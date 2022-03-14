@@ -20,7 +20,7 @@ ALL packages & libraries described below shall be installed before running the p
 
 ### Installing
 
-* No modification required for the moment after the download of Rest-API_Test.py file
+* No modification required for the moment after the download of REST-API_Test.py file
 
 ### Executing program
 
