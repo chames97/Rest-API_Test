@@ -1,9 +1,33 @@
-# Rest-API_Test
-This test cover the following REST API (GET/POST/PUT/DELETE) 
-[Preconditions]
-1/ Python shall be installed 
-2/ Pytest have to be installed in the deployment env
-3/ Install both allure and logging modules  
+# REST API check using PyTest
 
-############## Launch CMD #############
+Use python "requests" library in order to test the different REST-API methods.
+
+## Description
+
+This project cover the following HTTP methods (GET/POST/PUT/DELETE).
+
+## Getting Started
+
+### Dependencies
+
+ALL packages & libraries described below shall be installed before running the program.
+* python [recommended: python3]     // https://www.python.org/downloads/
+* pip  [recommended: pip3]     // https://pip.pypa.io/en/stable/installation/
+* pytest          // https://pypi.org/project/pytest/
+* requests         // https://pypi.org/project/requests/
+* allure-pytest   // https://pypi.org/project/allure-pytest/
+* logging-pytest  // https://pypi.org/project/pytest-logging/
+
+### Installing
+
+* No modification required for the moment after the download of Rest-API_Test.py file
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
 pytest REST-API_Test.py --alluredir=allure-report/
+```
+
+
